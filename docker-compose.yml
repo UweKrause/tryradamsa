@@ -1,12 +1,13 @@
-version: "3.9"
 services:
   server:
     build:
       context: ./server
     ports:
-      - "5000:5000"
+      - "80:80"
+    tty: true
   client:
     build:
       context: ./client
     depends_on:
       - server
+    tty: true

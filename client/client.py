@@ -1,7 +1,8 @@
-import requests
 import time
 
-SERVER_URL = "http://server:5000"
+import requests
+
+SERVER_URL = "http://server:80"
 
 while True:
     try:
