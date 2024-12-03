@@ -1,6 +1,12 @@
 # tryradamsa
 
-Try [pyradamsa](https://github.com/tsundokul/pyradamsa).
+Try
+[pyradamsa](https://github.com/tsundokul/pyradamsa),
+the python interface to
+[libradamsa](https://github.com/andreafioraldi/libradamsa),
+the precompiled
+[radamsa](https://gitlab.com/akihe/radamsa)
+library.
 
 ## Goal
 
