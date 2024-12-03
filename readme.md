@@ -23,5 +23,5 @@ Echoes the clients request.
 
 Http client.  
 Uses [pyradamsa](https://github.com/tsundokul/pyradamsa) to create fuzzing payloads.  
-ToDo: Compare sent payload with echoed payload. 
+ToDo: Compare sent payload with echoed payload.
 
