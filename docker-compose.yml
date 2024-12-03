@@ -1,13 +1,29 @@
 services:
+
   server:
     build:
       context: ./server
     ports:
       - "80:80"
     tty: true
+    command: python server.py
+
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./server
+          target: /opt/app
+
   client:
-    build:
-      context: ./client
     depends_on:
       - server
+    build:
+      context: ./client
     tty: true
+    command: python client.py
+
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./client
+          target: /opt/app
