@@ -1,14 +1,24 @@
 import time
 
+import pyradamsa
 import requests
 
 SERVER_URL = "http://server:80"
 
+data_base = b"name=examplename&password=trustno1"
+
+radamsa = pyradamsa.Radamsa()
+
 while True:
     try:
-        data = {"message": "Hello from the client!"}
-        response = requests.post(SERVER_URL, json=data)
-        print(f"Server responded with: {response.json()}")
+        data_fuzz = radamsa.fuzz(data_base)
+        response = requests.post(SERVER_URL, data=data_fuzz)
+        print(f"Client sends: {response.request.body}")
+        print(f"Server responded with: {response.text}")
+        # ToDo: Compare sent with received data
+
     except Exception as e:
+        # ToDo: Log which input caused what error (if any)
         print(f"Error: {e}")
-    time.sleep(5)  # Wait for 5 seconds before sending the next request
+
+    time.sleep(1)
